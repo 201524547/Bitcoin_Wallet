@@ -1,3 +1,3 @@
 # Bitcoin_Wallet
 
-# start
+npm install 대신 yarn add 로 하세요
