@@ -6,10 +6,10 @@ import {createStackNavigator} from '@react-navigation/stack';
 function HomeScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
+      <Text>Wallet App</Text>
       <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        title="Create"
+        onPress={() => navigation.navigate('WalletTypeScreen')}
       />
     </View>
   );
