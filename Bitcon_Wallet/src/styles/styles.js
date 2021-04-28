@@ -4,6 +4,7 @@ export const Colors = {
   dark: 'black',
   light: 'white',
   red: 'red',
+  main: '#002366',
 };
 
 const baseHeaderStyles = {
