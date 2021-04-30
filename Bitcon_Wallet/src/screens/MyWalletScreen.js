@@ -1,7 +1,5 @@
-import React, {Component} from 'react';
-import {Button, View, Text} from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import React from 'react';
+import {View, Text, Button} from 'react-native';
 import getStyleSheet from '../styles/styles';
 
 function MyWalletScreen({navigation}) {
@@ -14,6 +12,10 @@ function MyWalletScreen({navigation}) {
 
       <View style={styles.body}>
         <Text>My Wallet</Text>
+        <Button
+          title="지갑"
+          onPress={() => navigation.navigate('WalletScreen')}
+        />
       </View>
 
       <View style={styles.footer}>
