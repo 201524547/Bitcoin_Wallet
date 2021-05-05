@@ -1,5 +1,3 @@
-import {StyleSheet} from 'react-native';
-
 export const Colors = {
   dark: 'black',
   light: 'white',
@@ -7,91 +5,189 @@ export const Colors = {
   main: '#002366',
 };
 
-const baseHeaderStyles = {
-  flex: 3,
-  justifyContent: 'center',
+const WalletButtonStyle = {
+  width: '60%',
+  height: 40,
+
+  display: 'flex',
+  flexDirection: 'column',
+  justyfyContent: 'center',
   alignItems: 'center',
+
+  marginBottom: 12,
+
+  backgroundColor: Colors.main,
+  borderWidth: 1,
+  borderStyle: 'solid',
+  borderColor: Colors.light,
 };
 
-const baseBodyStyles = {
-  flex: 7,
-  justifyContent: 'center',
-  alignItems: 'center',
+const WalletButtonTextStyle = {
+  color: Colors.light,
+  fontSize: 16,
+  fontWeight: 'light',
+  lineHeight: 36,
+  textAlign: 'center',
 };
 
-const baseFooterStyles = {
-  flex: 1,
-  justifyContent: 'center',
+const WalletScreenContainerStyle = {
+  width: '100%',
+  height: '100%',
+
+  display: 'flex',
+  flexDirection: 'column',
+  justyfyContent: 'flexStart',
   alignItems: 'center',
+
+  padding: 10,
+
+  backgroundColor: Colors.main,
 };
 
-const baseContainerStyles = {
-  flex: 1,
-  justifyContent: 'center',
-  alignItems: 'center',
+export const WalletScreenStyle = {
+  container: WalletScreenContainerStyle,
+  button: WalletButtonStyle,
+  buttonText: WalletButtonTextStyle,
 };
 
-const baseBoxStyles = {
-  justifyContent: 'center',
+const WalletInformationContainerStyle = {
+  width: '80%',
+  height: 120,
+
+  display: 'flex',
+  flexDirection: 'column',
+  justyfyContent: 'spaceBetween',
   alignItems: 'center',
-  borderWidth: 2,
-  height: 150,
-  width: 150,
+
+  padding: 20,
+  marginTop: 20,
+  marginBottom: 20,
+
+  backgroundColor: Colors.main,
+  borderWidth: 1,
+  borderStyle: 'solid',
+  borderColor: Colors.light,
+  borderRadious: '10%',
 };
 
-const lightStyleSheet = StyleSheet.create({
-  header: {
-    ...baseHeaderStyles,
-  },
+const WalletNameStyle = {
+  marginBottom: 16,
 
-  body: {
-    ...baseBodyStyles,
-  },
+  color: Colors.light,
+  fontSize: 20,
+  fontWeight: 'bold',
+  lineHeight: 24,
+};
 
-  footer: {
-    ...baseFooterStyles,
-  },
-  container: {
-    ...baseContainerStyles,
-    backgroundColor: Colors.light,
-  },
-  box: {
-    ...baseBoxStyles,
-    borderColor: Colors.dark,
-  },
-});
+const WalletAccountStyle = {
+  color: Colors.light,
+  fontSize: 30,
+  fontWeight: 'bold',
+  lineHeight: 32,
+};
 
-const darkStyleSheet = StyleSheet.create({
-  container: {
-    ...baseContainerStyles,
-    backgroundColor: Colors.dark,
-  },
-  box: {
-    ...baseBoxStyles,
-    borderColor: Colors.light,
-  },
-});
+export const WalletInformation = {
+  container: WalletInformationContainerStyle,
+  walletName: WalletNameStyle,
+  walletAccount: WalletAccountStyle,
+};
 
-const redStyleSheet = StyleSheet.create({
-  container: {
-    ...baseContainerStyles,
-    backgroundColor: Colors.red,
-  },
-  box: {
-    ...baseBoxStyles,
-    borderColor: Colors.light,
-  },
-});
+const TransactionItemContainerStyle = {
+  width: '80%',
+  height: 60,
 
-export default function getStyleSheet(themeType) {
-  switch (themeType) {
-    case 'dark':
-      return darkStyleSheet;
-    case 'light':
-      return lightStyleSheet;
-    case 'red':
-      return redStyleSheet;
-    default:
-      return darkStyleSheet;
-  }
-}
+  display: 'flex',
+  flexDirection: 'row',
+  justyfyContent: 'flexStart',
+  alignItems: 'center',
+
+  marginBottom: 8,
+  padding: 10,
+
+  backgroundColor: Colors.main,
+  borderWidth: 1,
+  borderColor: Colors.light,
+  borderStyle: 'solid',
+};
+
+const TransactionTypeTextStyle = transactionType => {
+  return {
+    width: 80,
+    marginRight: 20,
+
+    color: transactionType == 'receive' ? 'blue' : 'red',
+    fontSize: 24,
+    fontWeight: 'bold',
+    lineHeight: 28,
+    textAlign: 'center',
+  };
+};
+const TransactionAmountStyle = {
+  width: 60,
+  marginRight: 20,
+
+  color: Colors.light,
+  fontSize: 12,
+  fontWeight: 'normal',
+  lineHeight: 28,
+};
+
+const TransactionAddressStyle = {
+  color: Colors.light,
+  fontSize: 12,
+  fontWeight: 'normal',
+  lineHeight: 28,
+};
+
+export const TransactionItemStyle = {
+  container: TransactionItemContainerStyle,
+  transactionType: TransactionTypeTextStyle,
+  transactionAmount: TransactionAmountStyle,
+  transactionAddress: TransactionAddressStyle,
+};
+
+const SendInputStyle = {
+  width: '80%',
+  height: 40,
+
+  display: 'flex',
+
+  marginBottom: 12,
+  padding: 8,
+
+  backgroundColor: '#224588',
+
+  color: Colors.light,
+  fontSize: 12,
+  fontWeight: 'normal',
+  lineHeight: 24,
+};
+
+const SendButtonStyle = {
+  width: 160,
+  height: 36,
+
+  display: 'flex',
+  justyfyContent: 'center',
+  alignItems: 'center',
+
+  marginTop: 12,
+
+  backgroundColor: Colors.main,
+  borderColor: Colors.light,
+  borderStyle: 'solid',
+  borderWidth: 1,
+};
+
+const SendButtonTextStyle = {
+  color: Colors.light,
+  fontSize: 20,
+  fontWeight: 'normal',
+  lineHeight: 32,
+};
+
+export const SendScreenStyle = {
+  input: SendInputStyle,
+  button: SendButtonStyle,
+  text: SendButtonTextStyle,
+};
